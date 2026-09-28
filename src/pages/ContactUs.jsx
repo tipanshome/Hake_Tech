@@ -154,7 +154,7 @@ export default function ContactUs() {
                 <circle cx="17" cy="17" r="3" fill="#83c9d7" />
               </svg>
               <p className="text-[11px] uppercase tracking-widest text-[#83c9d7] font-semibold mb-2">
-                Registered office · Agartala
+                Registered office · Guwahati, Assam
               </p>
               <p className="font-mono text-2xl sm:text-3xl text-white tracking-tight">
                 23.8315° N

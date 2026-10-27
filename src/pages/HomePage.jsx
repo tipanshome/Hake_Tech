@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Layers,
@@ -14,8 +13,7 @@ import {
   Brain,
   Radio,
   Cloud,
-  X,
-  ZoomIn,
+  Award,
 } from 'lucide-react';
 import { capabilities } from '../data/capabilities';
 import { products, healthProducts } from '../data/products';
@@ -40,7 +38,6 @@ const iconMap = {
 };
 
 export default function HomePage() {
-  const [selectedCert, setSelectedCert] = useState(null);
 
   useDocumentTitle(
     'Home',
@@ -560,59 +557,63 @@ export default function HomePage() {
             {certifications.map((cert) => (
               <div
                 key={cert.id}
-                className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-7 shadow-xs hover:shadow-2xl hover:border-[#005b94]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+                className="rounded-3xl bg-white border border-slate-200/90 p-7 sm:p-8 shadow-xs hover:shadow-xl hover:border-[#005b94]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
               >
+                {/* Decorative Top Accent */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#005b94] to-[#0091d5] opacity-80 group-hover:opacity-100 transition-opacity" />
+
                 <div>
-                  {/* Top Badges */}
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#005b94] bg-sky-50 border border-sky-100 px-3 py-1 rounded-full">
+                  {/* Top Header Badge & Verification Pill */}
+                  <div className="flex items-center justify-between gap-2 mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#005b94] group-hover:scale-105 group-hover:bg-[#005b94] group-hover:text-white transition-all duration-300 shadow-2xs">
+                      <Award className="w-6 h-6" />
+                    </div>
+                    <span className="flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/90 px-3 py-1 rounded-full shadow-2xs">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                      ISO Certified
+                    </span>
+                  </div>
+
+                  {/* Certification Category & Standards */}
+                  <div className="space-y-1.5">
+                    <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#005b94]">
                       {cert.badgeLabel}
                     </span>
-                    <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-md">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                      Certified
-                    </span>
-                  </div>
-
-                  {/* Certificate Image Frame */}
-                  <div
-                    onClick={() => setSelectedCert(cert)}
-                    className="relative w-full h-56 rounded-2xl bg-gradient-to-b from-slate-50 to-slate-100/60 border border-slate-200/80 p-4 flex items-center justify-center overflow-hidden cursor-pointer group/img transition-all"
-                  >
-                    <img
-                      src={cert.image}
-                      alt={cert.name}
-                      className="max-h-full max-w-full object-contain filter drop-shadow-md group-hover/img:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-[#0c2340]/0 group-hover/img:bg-[#0c2340]/10 transition-colors flex items-center justify-center">
-                      <span className="opacity-0 group-hover/img:opacity-100 transition-opacity bg-white/95 text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1.5">
-                        <ZoomIn className="w-3.5 h-3.5 text-[#005b94]" />
-                        View Certificate
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="mt-5 text-center">
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-[#0c2340] font-heading group-hover:text-[#005b94] transition-colors">
+                    <h3 className="text-2xl font-black text-[#0c2340] font-heading group-hover:text-[#005b94] transition-colors">
                       {cert.name}
                     </h3>
-                    <p className="text-xs font-bold text-[#005b94] mt-1 tracking-wide">
+                    <p className="text-xs sm:text-sm font-bold text-slate-800 tracking-tight">
                       {cert.title}
                     </p>
-                    <p className="text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed text-left">
-                      {cert.description}
-                    </p>
                   </div>
+
+                  {/* Description */}
+                  <p className="text-slate-600 text-xs sm:text-sm mt-3.5 leading-relaxed">
+                    {cert.description}
+                  </p>
+
+                  {/* Certified Assurance Highlights */}
+                  {cert.benefits && cert.benefits.length > 0 && (
+                    <div className="mt-6 pt-5 border-t border-slate-100 space-y-2.5">
+                      <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 block">
+                        Certified Assurance Standards
+                      </span>
+                      <ul className="space-y-2">
+                        {cert.benefits.map((benefit, idx) => (
+                          <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 leading-snug">
+                            <CheckCircle2 className="w-4 h-4 text-[#005b94] shrink-0 mt-0.5" />
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
 
                 {/* Scope & Footer */}
-                <div className="mt-6 pt-4 border-t border-slate-100">
-                  <div className="text-[11px] text-slate-500 flex items-center justify-between">
-                    <span className="font-medium">Standard Scope:</span>
-                    <span className="font-semibold text-slate-800 text-right">{cert.scope}</span>
-                  </div>
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                  <span className="font-medium">Standard Scope:</span>
+                  <span className="font-semibold text-slate-800 text-right">{cert.scope}</span>
                 </div>
               </div>
             ))}
@@ -630,86 +631,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Certificate Preview Modal */}
-      {selectedCert && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-4 sm:p-6 overflow-y-auto animate-fade-in"
-          onClick={() => setSelectedCert(null)}
-        >
-          <div
-            className="bg-white w-full max-w-xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden p-6 sm:p-8 space-y-6"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-[#005b94] bg-cyan-50 border border-cyan-100 px-3 py-1 rounded-full uppercase tracking-wider">
-                  {selectedCert.badgeLabel}
-                </span>
-                <span className="text-xs font-semibold text-slate-500">
-                  {selectedCert.verifiedYear}
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={() => setSelectedCert(null)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <div className="w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-4 border border-slate-200/80">
-              <img
-                src={selectedCert.image}
-                alt={selectedCert.name}
-                className="max-h-full max-w-full object-contain filter drop-shadow-xl"
-              />
-            </div>
-
-            <div className="space-y-3">
-              <h3 className="text-2xl font-extrabold text-[#0c2340] font-heading">
-                {selectedCert.name}
-              </h3>
-              <p className="text-sm font-bold text-[#005b94]">
-                {selectedCert.title}
-              </p>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                {selectedCert.description}
-              </p>
-            </div>
-
-            <div className="space-y-2 pt-2 border-t border-slate-100">
-              <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                Certified Assurance Highlights
-              </h4>
-              <ul className="space-y-2">
-                {selectedCert.benefits.map((b, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                    <CheckCircle2 className="w-4 h-4 text-[#005b94] shrink-0 mt-0.5" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-              <span className="text-xs text-slate-500">
-                Scope: <strong className="text-slate-800">{selectedCert.scope}</strong>
-              </span>
-              <Link
-                to="/about/legal-compliance"
-                onClick={() => setSelectedCert(null)}
-                className="inline-flex items-center gap-1 text-xs font-bold text-[#005b94] hover:underline"
-              >
-                <span>Compliance Details</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
-
     </div>
   );
 }

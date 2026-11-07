@@ -134,13 +134,16 @@ export const geospatialProducts = [
     image: "/assets/Products/Network-Centric Operation.png",
     imgStyle: "object-cover object-center",
     tagline: "Spatial Epidemiology & Environmental Disease Surveillance",
-    description:
-      "The Digital One Health Application platform is an integrated geospatial health intelligence solution that links human health and environmental surveillance to monitor disease patterns, identify emerging health risks, and detect potential outbreak hotspots. By integrating spatial epidemiology, climate intelligence, satellite-derived indicators, and predictive analytics, the platform enables data-driven public health surveillance, risk assessment, and timely early-warning interventions.",
+    description: [
+      "The Battlefield Management System is a geospatial operational intelligence platform designed to support the Indian Army, Indian Navy, and Indian Air Force. It brings together operational data, maps, sensor feeds, and intelligence inputs to support a shared situational picture, coordinated decision-making, and mission planning across commands and units.",
+      "Built to support C4ISTAR capabilities, the system helps authorized users integrate command and control, communications, computers, intelligence, surveillance, target acquisition, and reconnaissance workflows. It can be installed and operated offline over a secure intranet, supporting deployment in environments with limited or no internet connectivity.",
+    ],
     features: [
-      "Integrated Human Health & Climate Data",
-      "Spatial Epidemiology & Disease Outbreak Hotspot Mapping",
-      "Satellite-Driven Disease Risk Assessment & Predictive Modelling",
-      "Automated Early-Warning Alerts & Public Health Response Coordination",
+      "Geospatial operational picture and battlefield mapping",
+      "Network-centric information sharing across authorized units and commands",
+      "C4ISTAR data integration and situational awareness",
+      "Mission planning, asset tracking, and operational coordination",
+      "Offline deployment and operation over a secure intranet"
     ],
     deployment:
       "Public Health Command Centers, Cloud SaaS, or On-Premise Health Clusters",

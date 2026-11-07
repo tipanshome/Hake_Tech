@@ -270,9 +270,27 @@ export default function HomePage() {
                     {prod.title}
                   </h4>
 
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                    {prod.desc}
-                  </p>
+                  {Array.isArray(prod.desc) ? (
+                    <div className="space-y-2 text-slate-600 text-sm leading-relaxed mb-6">
+                      {prod.desc.map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                    </div>
+                  ) : typeof prod.desc === 'string' && prod.desc.includes('\n') ? (
+                    <div className="space-y-2 text-slate-600 text-sm leading-relaxed mb-6">
+                      {prod.desc
+                        .split('\n')
+                        .map((p) => p.trim())
+                        .filter(Boolean)
+                        .map((p, i) => (
+                          <p key={i}>{p}</p>
+                        ))}
+                    </div>
+                  ) : (
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                      {prod.desc}
+                    </p>
+                  )}
 
                   <ul className="space-y-2.5 mb-8">
                     {prod.features.map((feat, fIdx) => (
@@ -339,9 +357,27 @@ export default function HomePage() {
                     )}
                   </h4>
 
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                    {prod.desc}
-                  </p>
+                  {Array.isArray(prod.desc) ? (
+                    <div className="space-y-2 text-slate-600 text-sm leading-relaxed mb-6">
+                      {prod.desc.map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                    </div>
+                  ) : typeof prod.desc === 'string' && prod.desc.includes('\n') ? (
+                    <div className="space-y-2 text-slate-600 text-sm leading-relaxed mb-6">
+                      {prod.desc
+                        .split('\n')
+                        .map((p) => p.trim())
+                        .filter(Boolean)
+                        .map((p, i) => (
+                          <p key={i}>{p}</p>
+                        ))}
+                    </div>
+                  ) : (
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                      {prod.desc}
+                    </p>
+                  )}
 
                   <ul className="space-y-2.5 mb-8">
                     {prod.features.map((feat, fIdx) => (

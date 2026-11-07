@@ -221,9 +221,31 @@ export default function ProductsPage() {
                       {product.tagline}
                     </p>
 
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      {product.description}
-                    </p>
+                    {Array.isArray(product.description) ? (
+                      <div className="space-y-3">
+                        {product.description.map((paragraph, pIdx) => (
+                          <p key={pIdx} className="text-slate-600 text-sm leading-relaxed">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    ) : typeof product.description === 'string' && product.description.includes('\n') ? (
+                      <div className="space-y-3">
+                        {product.description
+                          .split('\n')
+                          .map((p) => p.trim())
+                          .filter(Boolean)
+                          .map((paragraph, pIdx) => (
+                            <p key={pIdx} className="text-slate-600 text-sm leading-relaxed">
+                              {paragraph}
+                            </p>
+                          ))}
+                      </div>
+                    ) : (
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                        {product.description}
+                      </p>
+                    )}
 
                     <div className="pt-2 border-t border-slate-100">
                       <p className="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2.5">
@@ -247,13 +269,7 @@ export default function ProductsPage() {
                         {/* bg-[#005b94] hover:bg-[#004e7c] text-white */}
                         <span>
                           Inquire for{' '}
-                          {product.title.trim() === 'DOHA' ? (
-                            <>
-                              DOHA<sup className="text-[10px] align-super ml-0.5 font-bold">TM</sup>
-                            </>
-                          ) : (
-                            `${product.title.split(' ')[0]} ${product.title.split(' ')[1] || ''}`
-                          )}
+                          {product.title.trim()}
                         </span>
                         <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                       </Link>
@@ -277,13 +293,7 @@ export default function ProductsPage() {
                       {/* Bottom Image Caption Tag */}
                       <div className="absolute bottom-3 left-3 right-3 px-3 py-2 rounded-lg bg-slate-900/80 backdrop-blur-md border border-white/10 text-white flex items-center justify-between text-xs">
                         <span className="font-semibold text-slate-200 truncate">
-                          {product.title.trim() === 'DOHA' ? (
-                            <>
-                              DOHA<sup className="text-[9px] align-super ml-0.5 font-bold">TM</sup>
-                            </>
-                          ) : (
-                            product.title
-                          )}
+                          {product.title}
                         </span>
                         <span className="text-[10px] uppercase font-bold text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800 shrink-0 ml-2">
                           {product.type.split(' ')[0]}

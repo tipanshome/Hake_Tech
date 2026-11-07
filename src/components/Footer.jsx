@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
 
         {/* ================= TOP SECTION ================= */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 pb-12 border-b border-slate-800/80">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 pb-7 border-b border-slate-800/80">
 
           {/* ================= LEFT SIDE ================= */}
           <div className="lg:w-[42%] space-y-4">
@@ -70,6 +70,17 @@ export default function Footer() {
                 </svg>
               </a>
 
+            </div>
+
+            {/* Registered Office */}
+            <div className="pt-2 space-y-1">
+              <span className="text-[11px] font-bold text-slate-300 uppercase tracking-widest block font-heading">
+                Registered Office
+              </span>
+              <p className="text-xs text-slate-400 leading-relaxed max-w-sm flex items-start gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                <span>J101, Subham Heights, Janakpur Path, Kahilipara, Guwahati – 781019, Assam, India</span>
+              </p>
             </div>
           </div>
 
@@ -271,7 +282,7 @@ export default function Footer() {
 
 
         {/* ================= BOTTOM BAR ================= */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
 
           <p>
             © {new Date().getFullYear()} Hake Technologies. All rights reserved.

@@ -1,22 +1,22 @@
 export const clientLogos = [
   {
-    name: "Bodoland Territorial Council",
-    subtitle: "Kokrajhar",
+    name: "Bodoland Tourism",
+    subtitle: "Kokrajhar, Assam",
     logo: "/assets/Clients/Bodoland.jpg",
   },
   {
-    name: "Government of Sikkim",
-    subtitle: "Burtuk",
+    name: "Sikkim Goverment College",
+    subtitle: "Burtuk, Sikkim",
     logo: "/assets/Clients/Burtuk.jpg",
   },
   {
-    name: "Higher Education Department",
-    subtitle: "Government of Sikkim",
+    name: "Directorate of Higher Education",
+    subtitle: "Gangtok, Sikkim",
     logo: "/assets/Clients/Higher_Education_Sikim.jpg",
   },
   {
-    name: "NECTAR / NETCAR",
-    subtitle: "Govt. of India",
+    name: "NECTAR",
+    subtitle: "Shillong, Meghalaya",
     logo: "/assets/Clients/NETCAR.jpeg",
   },
   {
@@ -26,17 +26,17 @@ export const clientLogos = [
   },
   {
     name: "Government Degree College",
-    subtitle: "Rhenock",
+    subtitle: "Rhenock, Sikkim",
     logo: "/assets/Clients/Rahenock.jpg",
   },
   {
     name: "Sanchaman Limboo Govt College",
-    subtitle: "Gyalshing",
+    subtitle: "Gyalshing, Sikkim",
     logo: "/assets/Clients/Sanchaman.jpg",
   },
   {
     name: "Tripura Industrial Development Corporation Ltd",
-    subtitle: "TIDC",
+    subtitle: "Agartala, Tripura",
     logo: "/assets/Clients/Tidc.jpg"
   }
 ];

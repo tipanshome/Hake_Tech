@@ -115,12 +115,13 @@ export const geospatialProducts = [
     imgStyle: "object-cover object-center",
     tagline: "Spatial Epidemiology & Environmental Disease Surveillance",
     description:
-      "The Digital One Health Application platform is an integrated geospatial health intelligence solution that links human health and environmental surveillance to monitor disease patterns, identify emerging health risks, and detect potential outbreak hotspots. By integrating spatial epidemiology, climate intelligence, satellite-derived indicators, and predictive analytics, the platform enables data-driven public health surveillance, risk assessment, and timely early-warning interventions.",
+      "The \"Digital One Health Application\" (DOHA) platform brings together health, environmental, climate, satellite, and geospatial data with predictive analytics to track disease patterns, assess risks, and identify potential outbreak hotspots. Its mobile and web applications connect public and private health centres, hospitals, pharmacies, diagnostic centres, ambulances, and call centres. A secure data sandbox enables analysis and coordination across state and national health services, complementing government systems such as Ayushman Bharat initiatives.",
     features: [
-      "Integrated Human Health & Climate Data",
-      "Spatial Epidemiology & Disease Outbreak Hotspot Mapping",
-      "Satellite-Driven Disease Risk Assessment & Predictive Modelling",
-      "Automated Early-Warning Alerts & Public Health Response Coordination",
+      "Integrated One Health surveillance ",
+      "Disease and risk intelligence",
+      "Connected healthcare network ",
+      "Mobile and web access",
+      "Secure data and interoperability",
     ],
     deployment:
       "Public Health Command Centers, Cloud SaaS, or On-Premise Health Clusters",
@@ -259,12 +260,13 @@ export const healthProducts = [
   {
     tag: "DIGITAL HEALTH",
     title: "Digital One Health Application",
-    desc: "The Digital One Health Application platform is an integrated geospatial health intelligence solution that links human health and environmental surveillance to monitor disease patterns, identify emerging health risks, and detect potential outbreak hotspots. By integrating spatial epidemiology, climate intelligence, satellite-derived indicators, and predictive analytics, the platform enables data-driven public health surveillance, risk assessment, and timely early-warning interventions.",
+    desc: "The \"Digital One Health Application\" (DOHA) platform brings together health, environmental, climate, satellite, and geospatial data with predictive analytics to track disease patterns, assess risks, and identify potential outbreak hotspots. Its mobile and web applications connect public and private health centres, hospitals, pharmacies, diagnostic centres, ambulances, and call centres. A secure data sandbox enables analysis and coordination across state and national health services, complementing government systems such as Ayushman Bharat initiatives.",
     features: [
-      "Integrated Human Health & Climate Data",
-      "Spatial Epidemiology & Disease Outbreak Hotspot Mapping",
-      "Satellite-Driven Disease Risk Assessment & Predictive Modelling",
-      "Automated Early-Warning Alerts & Public Health Response Coordination",
+      "Integrated One Health surveillance ",
+      "Disease and risk intelligence",
+      "Connected healthcare network ",
+      "Mobile and web access",
+      "Secure data and interoperability",
     ],
     badge: "DOHA",
   },
